@@ -1,0 +1,10 @@
+# コメント
+FROM centos:centos7
+
+MAINTAINER test hoge
+
+RUN [ "yum", "install", "-y", "httpd"]
+RUN [ "rpm", "-Uvh", "http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm"]
+RUN [ "yum", "install", "-y", "nginx"]
+
+CMD ["/user/sbin/httpd", "-D", "FOREGROUND"]
