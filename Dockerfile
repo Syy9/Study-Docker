@@ -1,7 +1,7 @@
 FROM web-base
 
-ENV ROOT="/etc"
-ENV FOLDER="fuga"
-
-WORKDIR ${ROOT}/${FOLDER}
-RUN ["pwd"]
+RUN ["adduser", "userA"]
+RUN ["whoami"]
+User userA
+RUN ["whoami"]
+RUN ["echo", "終了"]
